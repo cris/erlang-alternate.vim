@@ -11,7 +11,7 @@ Switch between source and test files with `:A`-command in Erlang projects.
 
 ## Limitations
 
-Currently, only standard Erlang directory convention is supported:
+Currently, only standard Erlang directory convention(EUnit-like) is supported:
 
 * sources are located in `src/`
 * test files are located in `test/`
@@ -24,6 +24,11 @@ Example: `src/hook.erl` is alternated to `test/hook_tests.erl`
 - [Pathogen][1] `git clone https://github.com/cris/erlang-alternate.vim ~/.vim/bundle/erlang-alternate.vim`
 - [Vundle][2] `Bundle 'cris/erlang-alternate.vim'`
 - [NeoBundle][3] `NeoBundle 'cris/erlang-alternate.vim'`
+
+## Ideas
+
+* Support another testing frameworks(e.g.: wooga/etest)
+* Switch to header file as in `a.vim` (not sure whether it's valuable)
 
 [1]: https://github.com/tpope/vim-pathogen
 [2]: https://github.com/gmarik/vundle
