@@ -1,0 +1,26 @@
+# erlang-alternate.vim
+
+Switch between source and test files with `:A`-command in Erlang projects.
+
+## Usage
+
+* `:A` - switches from source to corresponding test file(or vise versa)
+* `:AS` - splits and switches
+* `:AV` - vertical splits and switches
+* `:AT` - new tab and switches
+
+## Limitations
+
+Currently, only standard Erlang directory convention is supported:
+
+* sources are located in `src/`
+* test files are located in `test/`
+* test file should be suffixed with `\_tests.erl`
+
+Example: `src/hook.erl` is alternated to `test/hook\_tests.erl`
+
+### Installation
+
+- [Pathogen][1] `git clone https://github.com/cris/erlang-alternate.vim ~/.vim/bundle/erlang-alternate.vim`
+- [Vundle][2] `Bundle 'cris/erlang-alternate.vim'`
+- [NeoBundle][3] `NeoBundle 'cris/erlang-alternate.vim'`
