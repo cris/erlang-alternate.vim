@@ -19,7 +19,7 @@ Currently, only standard Erlang directory convention(EUnit-like) is supported:
 
 Example: `src/hook.erl` is alternated to `test/hook_tests.erl`
 
-### Installation
+## Installation
 
 - [Pathogen][1] `git clone https://github.com/cris/erlang-alternate.vim ~/.vim/bundle/erlang-alternate.vim`
 - [Vundle][2] `Bundle 'cris/erlang-alternate.vim'`
