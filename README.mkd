@@ -15,12 +15,16 @@ Currently, only standard Erlang directory convention is supported:
 
 * sources are located in `src/`
 * test files are located in `test/`
-* test file should be suffixed with `\_tests.erl`
+* test file should be suffixed with `_tests.erl`
 
-Example: `src/hook.erl` is alternated to `test/hook\_tests.erl`
+Example: `src/hook.erl` is alternated to `test/hook_tests.erl`
 
 ### Installation
 
 - [Pathogen][1] `git clone https://github.com/cris/erlang-alternate.vim ~/.vim/bundle/erlang-alternate.vim`
 - [Vundle][2] `Bundle 'cris/erlang-alternate.vim'`
 - [NeoBundle][3] `NeoBundle 'cris/erlang-alternate.vim'`
+
+[1]: https://github.com/tpope/vim-pathogen
+[2]: https://github.com/gmarik/vundle
+[3]: https://github.com/Shougo/neobundle.vim
