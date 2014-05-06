@@ -11,13 +11,15 @@ Switch between source and test files with `:A`-command in Erlang projects.
 
 ## Limitations
 
-Currently, only standard Erlang directory convention(EUnit-like) is supported:
+Currently, only `EUnit` and `wooga/etest` directory conventions are supported:
 
 * sources are located in `src/`
 * test files are located in `test/`
-* test file should be suffixed with `_tests.erl`
+* test file should be suffixed with `_tests.erl`(EUnit) or with
+  `_test.erl`(etest)
 
-Example: `src/hook.erl` is alternated to `test/hook_tests.erl`
+Example: `src/hook.erl` is alternated to `test/hook_tests.erl` or to
+`test/hook_test.erl`.
 
 ## Installation
 
@@ -27,7 +29,6 @@ Example: `src/hook.erl` is alternated to `test/hook_tests.erl`
 
 ## Ideas
 
-* Support another testing frameworks(e.g.: wooga/etest)
 * Switch to header file as in `a.vim` (not sure whether it's valuable)
 
 [1]: https://github.com/tpope/vim-pathogen

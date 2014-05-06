@@ -1,20 +1,45 @@
 function! ErlangGetAlternateFilePath(filepath)
-  let alternateFilePath = ""
-
   let baseDir = fnamemodify(a:filepath, ":p:h:h")
 
   let fileName = fnamemodify(a:filepath, ":t")
   let dirName = fnamemodify(a:filepath, ":p:h:t")
 
   if dirName == "src"
-    let testName = split(fileName, ".erl$")[0] . "_tests.erl"
-    let alternateFilePath = baseDir . "/test/" . testName
+    if fileName !~ "\.erl$"
+      return ""
+    end
+    " EUnit
+    let eunitName = split(fileName, "\.erl$")[0] . "_tests.erl"
+    let alternateFilePath = baseDir . "/test/" . eunitName
+    if filereadable(alternateFilePath)
+      return alternateFilePath
+    end
+    " etest
+    let etestName = split(fileName, "\.erl$")[0] . "_test.erl"
+    let alternateFilePath = baseDir . "/test/" . etestName
+    if filereadable(alternateFilePath)
+      return alternateFilePath
+    end
+    " can't detect
+    return ""
   elseif dirName == "test"
-    let srcName = split(fileName, "_tests.erl$")[0] . ".erl"
-    let alternateFilePath = baseDir . "/src/" . srcName
+    " EUnit
+    if fileName =~ "_tests\.erl$"
+      let srcName = split(fileName, "_tests\.erl$")[0] . ".erl"
+      let alternateFilePath = baseDir . "/src/" . srcName
+      return alternateFilePath
+    end
+    " etest
+    if fileName =~ "_test\.erl$"
+      let srcName = split(fileName, "_test\.erl$")[0] . ".erl"
+      let alternateFilePath = baseDir . "/src/" . srcName
+      return alternateFilePath
+    end
+    " can't detect
+    return ""
   end
 
-  return alternateFilePath
+  return ""
 endfunction
 
 function! ErlangEditCommand(command)
