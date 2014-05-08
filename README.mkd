@@ -29,6 +29,9 @@ Example: `src/hook.erl` is alternated to `test/hook_tests.erl` or to
 
 ## Ideas
 
+* Create ability to switch-with-create, e.g.: `:A!`
+ - requires configuration setting for type of tests or some smart-detection based on another tests
+
 * Switch to header file as in `a.vim` (not sure whether it's valuable)
 
 [1]: https://github.com/tpope/vim-pathogen
